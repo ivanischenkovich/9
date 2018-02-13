@@ -1,6 +1,7 @@
 var a = [],
   isFound = false,
   i, fullarr = " ",
+  SN = " ",
   razm_arr = 10;
   
   for (i = 0; i < razm_arr; i++) {
@@ -8,42 +9,23 @@ var a = [],
   fullarr = fullarr + a[i] + " ";
 }
   
+ 
+ SN = prompt("Search number: "); 
+ 
   
-  
-  writeln('Filled random array: ');
-  for i := 1 to N do
-  begin
-    write(a[i], ' ');
-  end;  
-  
-  
-  
-  writeln;  
+if (SN !== null) {
+  for (i = 0; i < N; i++) {
+    if (a[i] == SN) {
+      isFound = true;
+    }
+  }
+  alert(fullarr);
  
  
  
-  k := Random(15);
- 
- 
- 
-  IsFound := False;
-  for i:=1 to N do
-  begin
-    if a[i] = k then 
-    begin
-      IsFound := True;
-      break;
-    end;
-  end;
- 
- 
- 
-  if IsFound then
-  begin
-    writeln('Element ', k, ' is found!');
-  end  
-  else
-  begin
-    writeln('Element ', k, ' not found');
-  end;  
-end.
+ if (isFound != true) {
+    alert("Element " + SN + " not found");
+  } else {
+    alert("Element " + SN + " is found!");
+  }
+}
