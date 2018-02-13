@@ -28,9 +28,7 @@ if (SN !== null) {
     }
   }
   alert(fullarr);
- 
- 
- 
+
  if (isFound != true) {
     alert("Element " + SN + " not found");
   } else {
