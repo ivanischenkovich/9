@@ -13,7 +13,7 @@ var a = [],
  do {
   SN = prompt("Search number: ");
   Error = false;
-  if (SN != null) {
+  if (SN !== null) {
     if ((SN == "") || (isNaN(SN))) {
       alert("Error");
       Error = true;
@@ -22,14 +22,14 @@ var a = [],
 } while (Error == true);
   
 if (SN !== null) {
-  for (i = 0; i < N; i++) {
+  for (i = 0; i < razm_arr; i++) {
     if (a[i] == SN) {
       isFound = true;
     }
   }
   alert(fullarr);
 
- if (isFound != true) {
+ if (isFound !== true) {
     alert("Element " + SN + " not found");
   } else {
     alert("Element " + SN + " is found!");
