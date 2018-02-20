@@ -1,37 +1,37 @@
-var a = [],
-  isFound = false,
-  i, fullarr = " ",
-  SN = " ",
-  Error,
-  razm_arr = 10;
-  
-  for (i = 0; i < razm_arr; i++) {
-  a[i] = Math.floor(Math.random() * 15);
-  fullarr = fullarr + a[i] + " ";
-}
-  
- do {
-  SN = prompt("Search number: ");
-  Error = false;
-  if (SN !== null) {
-    if ((SN == "") || (isNaN(SN))) {
-      alert("Error");
-      Error = true;
-    }
+  var a = [],
+    isFound = false,
+    i, fullArray = " ",
+    searchNumber = " ",
+    inError,
+    arraySize= 10;
+    
+  for (i = 0; i < arraySize; i++) {
+    a[i] = Math.floor(Math.random() * 15);
+    fullArray = fullArray + a[i] + " ";
   }
-} while (Error == true);
-  
-if (SN !== null) {
-  for (i = 0; i < razm_arr; i++) {
-    if (a[i] == SN) {
-      isFound = true;
+    
+  do {
+    searchNumber = prompt("Search number: ");
+    inError = false;
+    if (searchNumber !== null) {
+      if ((searchNumber == "") || (isNaN(searchNumber))) {
+        alert("inError");
+        inError = true;
+      }
     }
-  }
-  alert(fullarr);
-
- if (isFound !== true) {
-    alert("Element " + SN + " not found");
+  } while (inError == true);
+  
+  if (searchNumber !== null) {
+    for (i = 0; i < arraySize; i++) {
+      if (a[i] == searchNumber) {
+        isFound = true;
+      }
+    }
+  alert(fullArray);
+  
+  if (isFound !== true) {
+    alert("Element " + searchNumber + " not found");
   } else {
-    alert("Element " + SN + " is found!");
+    alert("Element " + searchNumber + " is found!");
+    }
   }
-}
