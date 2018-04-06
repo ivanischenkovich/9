@@ -2,11 +2,13 @@ body {
   margin: 0;
   padding: 0;
   background: #F5FFFA;
+  font-family: corbel;
 }
 .page {
   height: 400px;
 }
 .content {
+  position: relative;
   margin: 91px auto;
   width: 680px;
   height: 330px;
@@ -15,9 +17,30 @@ body {
   
 .login-page {
   width: 420px;
-  height: 220px;
+  height: 420px;
   float: left;
   background: #8FBC8F;
-
+  border: 1px solid #4682B4;
   margin: 100px 25%;
 }
+  
+input {
+  float: right;
+  height: 38px;
+  width: 258px;
+  padding: 0 20px 0 18px;
+  margin: 10px 60px 10px 0;
+  border-color: gray;
+  border: 1px solid rgba(0, 0, 0, .15);
+}
+  
+input:hover {
+  border-color: #4682B4;
+}
+  
+input:focus {
+  border-color: #4682B4;
+  outline: none;
+}
+  
+
