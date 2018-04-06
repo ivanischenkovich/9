@@ -15,6 +15,21 @@ body {
   text-align: left;
 }
   
+.checkbox {
+  float: left;
+  margin: 0 10px 0 80px;
+  height: 22px;
+  width: 22px;
+}
+ 
+.sign-up {
+  background: #4682B4;
+  color: white;
+  height: 40px;
+  width: 298px; 
+  border: 0;
+}
+  
 .login-page {
   width: 420px;
   height: 420px;
@@ -43,4 +58,15 @@ input:focus {
   outline: none;
 }
   
+button {
+  background: white;
+  border: 0px;
+}
 
+.text {
+  margin-left: 60px;
+}
+
+.text-header {
+  margin-left: 166px;
+}
