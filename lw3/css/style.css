@@ -4,9 +4,11 @@ body {
   background: #F5FFFA;
   font-family: corbel;
 }
+
 .page {
   height: 400px;
 }
+
 .content {
   position: relative;
   margin: 91px auto;

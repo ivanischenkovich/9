@@ -1,7 +1,5 @@
 function registration(event) {
-
   event.preventDefault();
-
   var email = document.getElementsByClassName('input-email')[0].value;
   var password = document.getElementsByClassName('input-password')[0].value;
   var passwordCheck = document.getElementsByClassName('input-password-check')[0].value;
@@ -15,7 +13,6 @@ function registration(event) {
     alert(validateResult);
   }
 }
-
 
 function validate(email, password, passwordCheck, check) {
   if (!validEmail(email)) {
