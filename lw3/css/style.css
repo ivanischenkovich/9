@@ -1,0 +1,23 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #F5FFFA;
+}
+.page {
+  height: 400px;
+}
+.content {
+  margin: 91px auto;
+  width: 680px;
+  height: 330px;
+  text-align: left;
+}
+  
+.login-page {
+  width: 420px;
+  height: 220px;
+  float: left;
+  background: #8FBC8F;
+
+  margin: 100px 25%;
+}
