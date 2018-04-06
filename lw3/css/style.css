@@ -30,7 +30,7 @@ body {
   border: 0;
 }
   
-.login-page {
+#login-page {
   width: 420px;
   height: 420px;
   float: left;
