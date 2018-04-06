@@ -16,7 +16,6 @@ function registration(event) {
   }
 }
 
-function validate(password, passwordCheck, check) {
 
 function validate(email, password, passwordCheck, check) {
   if (!validEmail(email)) {
