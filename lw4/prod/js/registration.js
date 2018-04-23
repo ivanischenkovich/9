@@ -1,7 +1,4 @@
 $(".login-page").submit(function (event) {
-  
-  event.preventDefault();
-  
   var email = $(".input-email").val();
   var password = $(".input-password").val();
   var passwordCheck = $(".input-password-check").val();
@@ -17,26 +14,30 @@ $(".login-page").submit(function (event) {
 });
 
 function validate(email, password, passwordCheck, check) {
-  if (!validEmail(email)) {
+  if (!isValidEmail(email)) {
+	event.preventDefault();
     return 'Введите корректный email!';
   }
 
   if (password.length < 6) {
-    return 'Длина пароля должна составлять не менее 6 символов';
+    event.preventDefault();
+	return 'Длина пароля должна составлять не менее 6 символов';
   }
 
   if (password !== passwordCheck) {
-    return 'Пароли не совпадают!';
+    event.preventDefault();
+	return 'Пароли не совпадают!';
   }
 
   if (!check) {
-    return 'Подтвердите согласие с правилами сайта!';
+    event.preventDefault();
+	return 'Подтвердите согласие с правилами сайта!';
   }
 
   return true;
 }
 
-function validEmail(Email) {
+function isValidEmail(Email) {
   var pattern = Email.match(/^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i);
   return pattern;
 }
