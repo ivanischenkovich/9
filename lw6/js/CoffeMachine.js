@@ -47,7 +47,6 @@ class CoffeeMachine {
     return false;
   }
   
-
   getRemainCash() {
     if (typeof this.currentCoffeeNumber === 'number' && typeof this.currentBalance === 'number'){
       var remain = this.currentBalance - this.coffeeMenu[this.currentCoffeeNumber].price;
