@@ -33,7 +33,6 @@ class CoffeeMachine {
   chooseCoffee (coffeeNumber) {
     if (typeof coffeeNumber === 'number') {
       if (coffeeNumber >= 1 && coffeeNumber < this.coffeeMenu.length + 1) {
-
         if (this.currentBalance >= this.coffeeMenu[coffeeNumber - 1].price){
           console.log('Ваш выбор: ' + coffeeNumber);
           this.currentCoffeeNumber = coffeeNumber - 1;

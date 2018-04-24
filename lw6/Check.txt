@@ -1,0 +1,17 @@
+﻿//Проверка
+var coffeeMachine = new CoffeeMachine();
+
+coffeeMachine.setCash(-1); 
+
+coffeeMachine.setCash(50); 
+
+coffeeMachine.getCoffeeMenu();
+
+coffeeMachine.chooseCoffee(1000); 
+
+coffeeMachine.chooseCoffee('165'); 
+
+coffeeMachine.chooseCoffee(2); 
+
+coffeeMachine.getRemainCash();
+
