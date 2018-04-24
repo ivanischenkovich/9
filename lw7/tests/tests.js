@@ -69,10 +69,6 @@ describe('Метод setCash', function() {
   });
 });
 
-
-
-
-
 describe('Метод chooseCoffee', function() {
   function makeTest(value, expected) {
     it(`при текущем балансе ${value.currentBalance} и выбраном номере кофе ${value.currentCoffeeNumber} должен вернуть ${expected}`, function() {
@@ -96,7 +92,6 @@ describe('Метод chooseCoffee', function() {
     makeTest(arrange.value, arrange.expected);
   });
 });
-
 
  describe('Метод getRemainCash', function() {
   function makeTest(value, expected) {
