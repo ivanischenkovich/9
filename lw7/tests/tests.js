@@ -69,6 +69,35 @@ describe('Метод setCash', function() {
   });
 });
 
+
+
+
+
+describe('Метод chooseCoffee', function() {
+  function makeTest(value, expected) {
+    it(`при текущем балансе ${value.currentBalance} и выбраном номере кофе ${value.currentCoffeeNumber} должен вернуть ${expected}`, function() {
+      let testCoffeeMachine = new CoffeeMachine();
+      testCoffeeMachine.currentBalance = value.currentBalance;
+      let actual = testCoffeeMachine.chooseCoffee(value.currentCoffeeNumber);
+      assert.equal(expected, actual);
+    });
+  }
+  let arranges = [
+    { value: { currentBalance: 20, currentCoffeeNumber: null }, expected: false },
+    { value: { currentBalance: 20, currentCoffeeNumber: undefined }, expected: false },
+    { value: { currentBalance: 0, currentCoffeeNumber: 1 }, expected: false },
+    { value: { currentBalance: 5, currentCoffeeNumber: 1 }, expected: false },
+    { value: { currentBalance: 100, currentCoffeeNumber: 1 }, expected: true },,
+    { value: { currentBalance: 78, currentCoffeeNumber: 1 }, expected: true },
+    { value: { currentBalance: 50, currentCoffeeNumber: 2 }, expected: true },
+    { value: { currentBalance: 30, currentCoffeeNumber: 3 }, expected: true }
+  ];
+  arranges.forEach(function(arrange, i) {
+    makeTest(arrange.value, arrange.expected);
+  });
+});
+
+
  describe('Метод getRemainCash', function() {
   function makeTest(value, expected) {
     it(`при балансе ${value.balance} и выбраном номере кофе ${value.coffee + 1} сдача должена быть: ${expected}`, function() {
