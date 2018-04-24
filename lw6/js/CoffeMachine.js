@@ -47,16 +47,6 @@ class CoffeeMachine {
     return false;
   }
   
-  checkNumber(num) {
-    return (this.coffeeMenu.find(item => item.coffeeId === number) !== undefined) ? true : false;
-  }
-
-  checkMoney(coffeeNumber) {
-    if (this.currentBalance < this.coffeeMenu(coffeeNumber).price)
-      return false;
-    else
-      return true;
-  }
 
   getRemainCash() {
     if (typeof this.currentCoffeeNumber === 'number' && typeof this.currentBalance === 'number'){
