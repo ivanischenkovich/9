@@ -5,7 +5,14 @@ class CoffeeMachine {
 	  {id: 1, name: 'Макиато', price: 33 },                
 	  {id: 2, name: 'Капучино', price: 11},
       {id: 3, name: 'Моккочино', price: 22},
+      {id: 4, name: 'Американо', price: 100}];
     this.currentCoffeeNumber = 0;
+  }
+
+  getCoffeeMenu() {
+    this.coffeeMenu.forEach(function(coffee, i) {
+      console.log(`${coffee.id} - ${coffee.name} ${coffee.price}  руб`);
+    });
   }
   
   setCash(money) {
@@ -28,7 +35,7 @@ class CoffeeMachine {
       if (coffeeNumber >= 1 && coffeeNumber < this.coffeeMenu.length + 1) {
 
         if (this.currentBalance >= this.coffeeMenu[coffeeNumber - 1].price){
-          console.log('choosed ' + coffeeNumber);
+          console.log('Ваш выбор: ' + coffeeNumber);
           this.currentCoffeeNumber = coffeeNumber - 1;
           return true;
         }
@@ -41,3 +48,25 @@ class CoffeeMachine {
     return false;
   }
   
+  checkNumber(num) {
+    return (this.coffeeMenu.find(item => item.coffeeId === number) !== undefined) ? true : false;
+  }
+
+  checkMoney(coffeeNumber) {
+    if (this.currentBalance < this.coffeeMenu(coffeeNumber).price)
+      return false;
+    else
+      return true;
+  }
+
+  getRemainCash() {
+    if (typeof this.currentCoffeeNumber === 'number' && typeof this.currentBalance === 'number'){
+      var remain = this.currentBalance - this.coffeeMenu[this.currentCoffeeNumber].price;
+      console.log('Остаток баланса: ' + remain);
+      return remain;
+    }
+    return false;
+  }
+}
+
+ 
