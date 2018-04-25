@@ -9,19 +9,19 @@ var gulp = require('gulp'),
 
 gulp.task('minify-js', function () {
   gulp.src('src/js/registration.js')
-    .pipe(uglify())
-    .pipe(rename({suffix: '.min'}))
-    .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
-    .pipe(gulp.dest('build/js'))
-    });
+  .pipe(uglify())
+  .pipe(rename({suffix: '.min'}))
+  .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+  .pipe(gulp.dest('build/js'))
+});
 
 gulp.task('minify-css', function () {
   gulp.src('src/css/style.css')
-    .pipe(cssmin())
-    .pipe(rename({suffix: '.min'}))
-	.on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
-	.pipe(gulp.dest('build/css'))
-    });
+  .pipe(cssmin())
+  .pipe(rename({suffix: '.min'}))
+  .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+  .pipe(gulp.dest('build/css'))
+});
 
 gulp.task('html-build', function () {
   gulp.src('src/*.html')
