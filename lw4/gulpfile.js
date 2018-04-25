@@ -52,13 +52,12 @@ gulp.task('build', function () {
 	  function () {
 	    gulp.src('src/css/style.css').pipe(gulp.dest('build/css'));
 		gulp.src('src/js/registration.js').pipe(gulp.dest('build/js'));
-		browserSync.reload
       }
     )
   }
   browserSync.init({
     server: {
-      baseDir: "./src"
+      baseDir: "./build"
     }
   });
   update ();
