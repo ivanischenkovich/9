@@ -13,8 +13,6 @@ const ERROR404 = {
   error: '404 Not Found'
 };
 
-
-
 const ERROR500 = {
   error: '500 Internal Server Error'
 };
@@ -29,12 +27,9 @@ router.get(routeProducts, function(req, res, next) {
 router.get(routeProductsID, function(req, res, next) {
   Product.findOne({_id: req.params.id}).then(function(product) {
     res.send(product);
-	
-	
     }).catch(function(next) {res.send({error: '404'});
   });
 });
-
 
 router.get(routeReviews, function(req, res, next) {
   Review.find({}).then(function(reviews) {
@@ -53,8 +48,6 @@ router.get(routeReviewsID, function(req, res, next) {
 router.get(routeProductsIDReviews, function(req, res, next) {
   Review.find({productId: req.params.id}).then(function(reviews) {
     res.send(reviews);
-	
-	
     }).catch(function(next) {res.send({error: '404'});
   });
 });
