@@ -49,7 +49,6 @@ router.get(routeReviewsID, function(req, res, next) {
   });
 });
 
-
 router.get(routeProductsIDReviews, function(req, res, next) {
   Review.find({productId: req.params.id}).then(function(reviews) {
     res.send(reviews);
