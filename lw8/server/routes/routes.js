@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const Product = require('../blanks/products');
+const Review = require('../blanks/reviews');
 
 const routeProducts = '/products';
 const routeProductsID = '/products/:id';
