@@ -3,6 +3,12 @@ const router = express.Router();
 const Product = require('../scheme/products');
 const Review = require('../scheme/reviews');
 
+const routeProducts = '/products';
+const routeProductsID = '/products/:id';
+const routeReviews = '/reviews';
+const routeReviewsID = '/reviews/:id';
+const routeProductsIDReviews = '/products/:id/reviews';
+
 const ERROR404 = {
   error: '404 Not Founded'
 };
