@@ -4,9 +4,12 @@ const idvalidator = require('mongoose-id-validator');
 
 const ReviewSchema = new Schema({
   productId: {
+    type: Schema.Types.ObjectId,
+    required: [true]
+  },
+  discription: {
     type: String,
-	validate: /\S+/,
-    required: [true],
+    validate: /\S+/,
     required: [true]
   }
 });
