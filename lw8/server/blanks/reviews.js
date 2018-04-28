@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
-const Blank = mongoose.Blank;
+const Schema = mongoose.Schema;
 
-const ReviewSketch = new Blank({
+const ReviewSchema = new Schema({
   productId: {
-    type: Blank.Types.ObjectId,
+    type: Schema.Types.ObjectId,
     required: [true]
   },
   productDescription: {
@@ -17,6 +17,6 @@ const ReviewSketch = new Blank({
     },
 });
 
-const Review = mongoose.model('review', ReviewBlank);
+const Review = mongoose.model('review', ReviewSchema);
 
 module.exports = Review;

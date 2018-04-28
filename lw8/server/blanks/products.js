@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const Blank = mongoose.Blank;
+const Schema = mongoose.Schema;
 
-const ProductDraft = new Blank({
+const ProductSchema = new Schema({
   name: {
     type: String,
     unique: [true],
@@ -9,7 +9,7 @@ const ProductDraft = new Blank({
   }
 });
 
-const Product = mongoose.model('product', ProductBlank);
+const Product = mongoose.model('product', ProductSchema);
 module.exports = Product;
 
 
