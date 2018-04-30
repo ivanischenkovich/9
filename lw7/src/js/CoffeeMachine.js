@@ -1,18 +1,19 @@
 class CoffeeMachine {
   constructor() {
     this.currentBalance = 0;
-    this.coffeeMenu = [
-	  {id: 1, name: 'Макиато', price: 33 },                
-	  {id: 2, name: 'Капучино', price: 11},
-      {id: 3, name: 'Моккочино', price: 22},
-      {id: 4, name: 'Американо', price: 100}];
-    this.currentCoffeeNumber = 0;
+    this.coffeeMenu = new Map ([ 
+                                  [1, { name: 'Макиато', price: 33 }],
+                                  [250, { name: 'Капучино', price: 11 }],
+                                  [300, { name: 'Моккочино', price: 22 }],
+								  [4, { name: 'Американо', price: 100 }],
+                               ]);
+    this.currentCoffeeNumber = null;
   }
 
   getCoffeeMenu() {
-    this.coffeeMenu.forEach(function(coffee, i) {
-      console.log(`${coffee.id} - ${coffee.name} ${coffee.price}  руб`);
-    });
+    for(let [id, coffee] of this.coffeeMenu) {
+      console.log(`№ ${id} - ${coffee.name} (${coffee.price} руб.)`);
+    }
   }
   
   setCash(money) {
@@ -20,9 +21,10 @@ class CoffeeMachine {
       this.currentBalance += money;
 	  console.log(`Ваш баланс: ${this.currentBalance} руб.`)
       return true;
-    } else
-	console.log('Доступная форма оплаты: Монеты 1, 2, 5, 10 руб. и Купюры 10, 50 или 100 руб.')
-    return false;
+    } else {
+	  console.log('Доступная форма оплаты: Монеты 1, 2, 5, 10 руб. и Купюры 10, 50 или 100 руб.')
+      return false;
+	}
   }
 
   checkCash(money) {
@@ -30,31 +32,38 @@ class CoffeeMachine {
            money === 10 || money === 50 || money === 100;
   }
   
-  chooseCoffee (coffeeNumber) {
-    if (typeof coffeeNumber === 'number') {
-      if (coffeeNumber >= 1 && coffeeNumber < this.coffeeMenu.length + 1) {
-        if (this.currentBalance >= this.coffeeMenu[coffeeNumber - 1].price){
-          console.log('Ваш выбор: ' + coffeeNumber);
-          this.currentCoffeeNumber = coffeeNumber - 1;
-          return true;
-        }
-        console.log('Недостаточно средств!');
-        return false;
-      }
-      console.log('Вы не попали по кнопке!');
+  chooseCoffee(coffeeNumber) {
+    if (this.checkCoffeeNumber(coffeeNumber) && this.checkMoney(coffeeNumber)) {
+      this.currentCoffeeNumber = coffeeNumber;
+      console.log('Ваш выбор: № ' + coffeeNumber);
+	  return true;
+    } else {
       return false;
-    }
-    return false;
+	}
   }
-  
+
+  checkMoney(coffeeNumber) {
+    if (this.currentBalance >= this.coffeeMenu.get(coffeeNumber).price) {
+	  return true;
+    } else {
+      console.log('Недостаточно средств!');
+	  return false;
+	}
+  }
+
+  checkCoffeeNumber(coffeeNumber) {
+    if(this.coffeeMenu.has(coffeeNumber)) {
+      return true;
+    } else {
+	  console.log('Вы не попали по кнопке!');
+      return false;
+	}
+  }
+
   getRemainCash() {
-    if (typeof this.currentCoffeeNumber === 'number' && typeof this.currentBalance === 'number'){
-      var remain = this.currentBalance - this.coffeeMenu[this.currentCoffeeNumber].price;
-      console.log('Остаток баланса: ' + remain);
-      return remain;
-    }
-    return false;
+	var remain = this.currentBalance - this.coffeeMenu.get(this.currentCoffeeNumber).price;
+    console.log('Остаток баланса: ');
+	return remain;
   }
 }
-  module.exports = CoffeeMachine;
- 
+module.exports = CoffeeMachine;
