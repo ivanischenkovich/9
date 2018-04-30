@@ -11,7 +11,7 @@ coffeeMachine.chooseCoffee(1000);
 
 coffeeMachine.chooseCoffee('165'); 
 
-coffeeMachine.chooseCoffee(2); 
+coffeeMachine.chooseCoffee(300); 
 
 coffeeMachine.getRemainCash();
 
